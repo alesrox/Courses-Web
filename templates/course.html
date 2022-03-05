@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+{% block head %}
+<title>{{ title }}</title>
+{% endblock %}
+{% block body %}
+<section style="background-image: url('https://dl.airtable.com/.attachmentThumbnails/fc250aac546370deb66167f54fddc1fd/68257cbb'); background-size: 700px;">
+    <div class="container p-5">
+        <div class="jumbotron animated zoomIn">
+            <div class="main">
+                <div class="row padding" align="center">
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-6" align="center">
+                        <div class="border-div">
+                            <image src="{{ portada }}" class="img-fluid imgA" alt="Alex Ros {{ title }}"></image>
+                        </div>
+                            <p></p>
+                            <div class="px250">
+                                <h1 class="text-center">{{ title }}</h1>
+                                <hr style="background-color: black;">
+                                <p class="text-center">{{ description }}</p>
+                            </div>
+                        {% if lista %}
+                        <p>Requisitos para entender el curso: </p>
+                        <ul class="requirements">
+                        {% for j in requisitos %}
+                            <li>{{ j }}</li>
+                        {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% if pdf %}
+                        <a class="btn" href="{{ pdf }}" target="_blank">
+                            <i class="fa fa-download"></i> Prácticas {{ course }}.pdf
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6" style="margin-top: auto; margin-bottom: auto;">
+                        {% if temas %}
+                        {% for tema in temas %}
+                        <div class="{{ temas[tema][1] }} menuSkill dropleft p-2">
+                            <button class="btn btn-secondary dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ tema }}
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                {% for i in temas[tema][0] %}
+                                    <a class="dropdown-item" href="/course/{{ course }}/{{ i }}">{{ i }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <h3 class="text-center">Lo sentimos mucho este curso aun esta en desarrollo</h3>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

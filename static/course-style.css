@@ -1,0 +1,46 @@
+.border-div {
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
+    width: 225px;
+    height: 225px;
+    overflow: hidden;
+}
+.imgA {
+    width: 200px;
+    height: 225px;
+    transition: all 1.5s ease;
+}
+.border-div:hover .imgA {
+    transform: scale(1.5);
+}
+.px250 {
+    width: 300px;
+}
+
+@media only screen and (max-width: 700px) {
+    .menuSkill {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .px250 {
+        width: auto;
+    }
+}
+@media only screen and (min-width: 720px) {
+    .menuSkill {
+        float: right;
+        margin-right: 50px;
+    }
+    .jumbotron {
+        margin-right: 35px; 
+        margin-left: 35px;
+    }
+}
+
+ul.requirements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 50px;
+}

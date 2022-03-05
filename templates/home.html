@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% block head %}
+<title>Alex Ros Courses</title>
+{% endblock %}
+{% block body %}
+<section style="background-image: url('https://dl.airtable.com/.attachmentThumbnails/f849f7004da254e90b75eaff1ec0e834/015f6712'); background-size: 1500px;">
+    <div class="container p-4 animated zoomIn">
+        <div class="main row padding">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                <div class="jumbotron">
+                    <h1 class="text-center">Alex Ros Courses</h1>
+                    <hr>
+                    <p>
+                        Bienvenido a mi web de cursos sobre programación en español, donde mediante videos
+                        de cada curso podras aprender nuevos lenguajes de progración como Python o frameworks
+                        o librerias como Flask (Desarrollo Web con Python) o Discord.py (Crear Bots de Discord con Python)
+                        completamente gratis.
+                    </p>
+                    <p>
+                        Muchas Gracias por visitar mi Pagina Web de Cursos sobre programación,
+                        espero que te sirva mucho y puedas aprender bastante.
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                <image src="https://dl.airtable.com/.attachmentThumbnails/91d345c52c2b8e35bb0ec93b3da8c5bc/8a3f03b6" style="border-radius: 10px;" class="img-fluid" alt="Alex Ros - Couses"></image>
+            </div>
+        </div>
+    </div>
+</section>
+<section style="background-image: url('https://dl.airtable.com/.attachmentThumbnails/ab37f0db490d4d1f6813e7e1749a8c96/8f144f8b'); background-size: 800px;">
+    <div class="container p-4">
+        <div class="jumbotron animated zoomIn>" style="background-color: #525252; color: #f9f9f9;">
+            <h1 class="text-center">CURSOS</h1>
+            <hr style="background-color: #f9f9f9;">
+            <div class="container">
+                <div class="main row padding">
+                    {% for i in range(length) %}
+                    {% if length == 1 %}
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-4" align="center">
+                    {% elif length == 2 %}
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 p-4" align="center">
+                    {% else %}
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 p-4" align="center">
+                    {% endif %}
+                        <div class="card" style="width: 16rem;">
+                            <div class="divi-card" style="width: 100%;">
+                                <img class="card-img-top img-card" src="{{ urls[i] }}" alt="AlexRos Courses | {{ courses[i] }}">
+                            </div>
+                            <div class="card-body" style="color: black;">
+                                <h5 class="card-title">{{courses[i]}}</h5>
+                                <p class="card-text" style="color: black;">{{ description[i] }}</p>
+                                <a href="course/{{ courses[i].lower() }}" target="_blank" class="btn btn-primary">Ver Curso</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+    </div>
+</section>
+{% endblock %}

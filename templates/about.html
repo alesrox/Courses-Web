@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block head %}
+<title>About Me</title>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+{% endblock %}
+{% block body %}
+<section style="background-image: url('https://dl.airtable.com/.attachmentThumbnails/f849f7004da254e90b75eaff1ec0e834/015f6712'); background-size: 1600px;">
+    <div class="container p-4">
+        <div class="jumbotron animated zoomIn">
+            <div class="main row padding">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6" align="center">
+                    <h1 class="text-center title"></h1>
+                    <hr>
+                    <p class="p1">
+                    </p>
+                    <p class="p2">
+                        <a href="http://alexros.itch.io"  target="_blank">itch.io</a>
+                        <span class="p2b"></span> <a href="https://gamejolt.com/@AlexRos"  target="_blank">GameJolt</a>.
+                    </p>
+                    <p class="p3">
+                        <a href="http://www.sololearn.com/Profile/12251138" target="_blank" rel="noopener noreferrer">sololearn</a>.
+                    </p>
+                    <p class="p4">
+                        <a href="https://alesrox.github.io/portfolio/" class="a1"></a>.
+                    </p>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6" align="center">
+                    <image src="{{ photo }}" style="border-radius: 20px;" class="img-fluid" heigt="50%" width="50%" alt="Alex Ros"></image>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    var lang = '{{ lang }}';
+</script>
+<script src="{{url_for('static', filename='about-lang.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,73 @@
+.image:hover, .skill:hover {
+    cursor: pointer;
+}
+
+.owl-nav {
+    transform: translate(0%, -50%);
+}
+
+.owl-dots {
+    transform: translate(0%, -100%);
+}
+
+.skill {
+    width: 25px;
+}
+
+.skill[data]:hover:after {
+    content: attr(data);
+    padding: 4px 8px;
+    margin-top: -12px;
+    color: rgba(255,255,255,1);
+    left: 45%;
+    transform: translate(-30%);
+    position: absolute;
+    display: block;
+    top: 0%;
+    white-space: nowrap;
+    z-index: 2;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.5);
+}
+
+.auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section {
+    background-image: url('../static/img/slide_2.jpg'); 
+    background-size: 2800px; 
+    background-repeat: no-repeat; 
+    background-position: center;
+}
+
+@media only screen and (max-width: 700px) {
+    .skill {
+        position: relative;
+        width: 50%;
+        height: 50%;
+        height: auto;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .img-fluid {
+        width: 275px;
+        height: 275px;
+    }
+
+    .owl-nav {
+        transform: translate(0%, 160%);
+    }
+
+    .section {
+        background-size: 4500px;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    span {
+        width: 260px;
+    }
+}

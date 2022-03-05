@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block head %}
+<title> {{ title }} </title>
+{% endblock %}
+{% block body %}
+<section style="background-image: url('https://dl.airtable.com/.attachmentThumbnails/63a47a4b90397b40eccc1e419dc43ecc/dcfc4bc6');">
+<div class="container p-4">
+    <div class="jumbotron animated fadeIn">
+        <h1 class="display-4 text-center">{{ title }} :C</h1>
+        <hr class="my-4">
+        <h5 class="text-center">{{ error }} {{ error2 }}</h5>
+        <div align="center" style="user-select: none;" alt="Alex Ros courses">
+            <img src="{{ logo }}">
+        </div>
+        <div class="d-flex justify-content-center">
+            <a class="btn btn-primary btn-lg " href="/home" role="button">Back Home</a>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock %}

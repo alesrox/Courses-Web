@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block head %}
+<title>{{ title }}</title>
+{% endblock %}
+{% block body %}
+<section style="background-image: url('https://dl.airtable.com/.attachmentThumbnails/8addda9b5149cde5e404fd37085ae51d/3b6f81e9');">
+    <div class="container p-4">
+        <div class="jumbotron animated zoomIn">
+            <div class="main row padding">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h2 class="text-center">{{ title }}</h2>
+                    <hr>
+                    {% if video != ':C' %}
+                    <div class="d-flex justify-content-center">
+                        <video width="650" height="350" controls controlsList="nodownload">
+                            <source src="{{ video }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    {% else %}
+                    <h2 class="text-center">Lo sentimos mucho pero aun no se ha grabado el video de esta clase/lección</h2>
+                    <div align="center">
+                        <img class="img-fluid" src="https://dl.airtable.com/.attachmentThumbnails/3cc0a2053234fb7b310b62c80df968a0/490bbc5d" width="250" height="250" alt="Alex Ros Courses">
+                    </div>
+                    {% endif %}
+                    <div class="d-flex justify-content-center">
+                        <div class="p-3">
+                            <a class="btn btn-primary" href="/course/{{ course }}">Volver a la pagina del curso</a>
+                        </div>
+                        <div class="p-3">
+                            {% if not next == 'None' %}
+                            <a type="button" class="btn btn-primary" href="/course/{{ course }}/{{ next }}">
+                                Siguiente Lección
+                            </a>
+                            {% else %}
+                            <a type="button" class="btn btn-secondary" style="color: white;">
+                                Enorabuena esta fue la ultima clase :D
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

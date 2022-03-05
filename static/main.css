@@ -1,0 +1,19 @@
+button, img, image {
+    cursor: pointer;
+}
+
+.divi-card {
+    overflow: hidden;
+    border-bottom: 1px solid black;
+}
+
+.img-card {
+    width: 60%; 
+    margin-right: auto; 
+    margin-left: auto;
+    transition: all 1.5s ease;
+}
+
+.divi-card:hover .img-card {
+    transform: scale(1.5);
+}

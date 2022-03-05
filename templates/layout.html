@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ayh5rni.css">
+    <link rel="icon" type="image/png" href="{{ logo }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='course-style.css') }}">
+    {% block head %}
+    {% endblock %}
+</head>
+<body class="tk-acuta">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" style="color: white;" >
+            <div class="d-inline" onclick="window.location.assign('/home')" style="cursor: pointer;">
+                <img src="{{ logow }}" width="35px" height="35px"> {{ name }}
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item {{ l[0] }}">
+                    <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                </li>
+                <li class="nav-item {{ l[1] }}">
+                    <a class="nav-link" href="{{ url_for('about_me', lang='es') }}">About Me</a>
+                </li>
+                <li class="nav-item {{ l[2] }}">
+                    <a class="nav-link" href="https://alesrox.netlify.app">Portfolio</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {% block body %}
+    {% endblock %}
+    <footer class="bg-light text-center text-lg-start">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Alex Ros</h5>
+                    <p>
+                        Welcome to my website and Thanks for stopping by!
+                        <br><a href="/legalnote/es">Legal Notice</a>
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Social Networks</h5>
+                    <div style="margin-left: 16px;">
+                        <a href="https://www.youtube.com/channel/UChJm2LUfWUKAtf2ibioVBCw?view_as=subscriber" target="_blank" class="fa fa-youtube"
+                            style="font-size: 40px; padding-right: 15px; color: black;"></a>
+                        <a href="https://www.instagram.com/aleex__ros/" target="_blank" class="fa fa-instagram"
+                            style="font-size: 40px; padding-right: 15px; color: black;"></a>
+                        <a href="https://github.com/AlexRos10" target="_blank" class="fa fa-github"
+                            style="font-size: 40px; padding-right: 15px; color: black;"></a>
+                        <a href="https://twitter.com/alesrox" target="_blank" class="fa fa-twitter"
+                            style="font-size: 40px; padding-right: 15px; color: black;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2021 Copyright:
+            <a class="text-dark" href="https://alexros.pythonanywhere.com/portfolio">Alex Ros</a>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
